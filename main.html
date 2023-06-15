@@ -215,11 +215,12 @@
             ctx.fillText(blood_group, 270, 834);
             ctx.fillText(sathi, 270, 874);
             ctx.fillText(code, 270, 910);
-            console.log(3);
         }
 
         function download(){
-            console.log(document.getElementById('preview').toDataURL());
+            let name = 'ID Card';
+            name = document.querySelector('#name').value;
+            name += '.jpg';
             var link = document.createElement('a');
             link.download = 'ID Card';
             link.href = document.getElementById('preview').toDataURL();
