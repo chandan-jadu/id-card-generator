@@ -118,6 +118,16 @@
             enableOrientation: false,
             mouseWheelZoom: false
         });
+        fileInput = document.querySelector('#photo_input');
+        window.addEventListener('paste', e => {
+            if(e.clipboardData.types[1]  == 'Files'){
+                fileInput.files = e.clipboardData.files;
+                fileInput.dispatchEvent(new Event('change'))
+
+            }
+            // console.log(e.clipboardData.types);
+            // fileInput.change();
+        });
         function newUpload(event) {
             imageFile = event.target.files[0]
             if (imageFile) {
