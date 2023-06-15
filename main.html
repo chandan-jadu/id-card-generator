@@ -120,6 +120,7 @@
         });
         fileInput = document.querySelector('#photo_input');
         window.addEventListener('paste', e => {
+            console.log(e.clipboardData.types);
             if(e.clipboardData.types[1]  == 'Files'){
                 fileInput.files = e.clipboardData.files;
                 fileInput.dispatchEvent(new Event('change'))
