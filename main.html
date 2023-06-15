@@ -107,7 +107,6 @@
     <!-- </div> -->
     <script src="croppie.js"></script>
     <script>
-console.log(1);
 
         var el = document.getElementById('vanilla-demo');
         var vanilla = new Croppie(el, {
@@ -221,7 +220,7 @@ console.log(1);
             name = document.querySelector('#name').value;
             name += '.jpg';
             var link = document.createElement('a');
-            link.download = 'ID Card';
+            link.download = name;
             link.href = document.getElementById('preview').toDataURL();
             document.body.appendChild(link);
             link.click();
