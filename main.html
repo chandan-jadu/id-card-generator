@@ -204,15 +204,14 @@
 
             ctx.fillStyle = '#000';
 
-            ctx.textAlign = 'left';
-            ctx.font = '21px slnt';
-            ctx.fillText(address, 270, 675);
-            ctx.fillText(phone_no, 270, 715);
-            ctx.fillText(email_id, 270, 754);
-            ctx.fillText(service_type, 270, 793);
-            ctx.fillText(blood_group, 270, 834);
-            ctx.fillText(sathi, 270, 874);
-            ctx.fillText(code, 270, 910);
+            
+            putText(ctx, address, 270, 675);
+            putText(ctx, phone_no, 270, 715);
+            putText(ctx, email_id, 270, 754);
+            putText(ctx, service_type, 270, 793);
+            putText(ctx, blood_group, 270, 834);
+            putText(ctx, sathi, 270, 874);
+            putText(ctx, code, 270, 910);
         }
 
         function download(){
@@ -220,11 +219,21 @@
             name = document.querySelector('#name').value;
             name += '.jpg';
             var link = document.createElement('a');
-            link.download = name;
+            link.download = 'name';
             link.href = document.getElementById('preview').toDataURL();
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        }
+        function putText(ctx,str, x, y){
+            // 44
+            ctx.textAlign = 'left';
+            ctx.font = '21px slnt';
+            if(str.length > 44){
+                ctx.font = '16px slnt';
+            }
+            ctx.fillText(str, x, y);
+
         }
     </script>
 </body>
